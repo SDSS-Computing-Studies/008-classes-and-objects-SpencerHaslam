@@ -17,6 +17,11 @@ getHonorRoll()  - determines the average of the top 5 courses if there are at le
 showCourses()   - prints a list of all courses
 showGrade(int)  - takes 1 parameter, the index of the list
                 - displays the course name and grade
+                eg: 
+    st1.showGrade(0)
+        English 91
+    st2.showGrade(1)
+        Math 98
 getCourses(list)- Receives a list of courses and stores that in the class property
 getGrades(list) - Receives a list of grades and stores that in the class property
 constructor     - should require the student name, studentNumber and grade (in that order)
@@ -32,24 +37,55 @@ class student:
 
     # properties should be listed first
 
-    def __init__(self,name,studentID,grade,courses,grades): # You will need to create your own input parameters for all methods
-        print( self.name )
+    def __init__(self,name,studentID,grade): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentID = studentID
+        self.grade = grade
+    
+    def showGrade(self,clas):
+        
+        
 
-    def __del__():
+
+
+    def __del__(self):
         pass
 
     def getGrades(self, inputList):
         # the grades are stored in self.grades
         # receives a list as input
-        pass
+        # input list now contains all the information in a local variable
+        self.grades = inputList
+        
+
+    def getCourses(self,x):
+        self.courses = x
+        
+
+    def whoAmI(self):
+        print( self.name)
 
     def average(self):
         sum_grades = 0
         for t in self.grades:
             sum_grades = sum_grades + t           
 
-        avg = sum_grades / len(grades)
+        avg = sum_grades / len( self.grades )
         return avg
+    def getHonorRoll(self):
+        y = self.grades.sort()
+        y.remove([0],[1])
+        sum_grades = 0
+        for t in y:
+            sum_grades = sum_grades + t
+        
+        h = sum_grades / len( y )
+        if y <= 86:
+            return True
+        else:
+            return False
+
+        
 
 def main():
     # This contains test data that will be used by the autograder.
@@ -62,8 +98,9 @@ def main():
     print( st1.average() )
 
     st2 = student("Joe Lunchbox","12346", 11)
-    st1.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
-    st1.getGrades( 71, 98, 93, 95, 68, 81, 71)
+    st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
+    st2.getGrades( [71, 98, 93, 95, 68, 81, 71] )
+
 
 
 main()
