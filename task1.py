@@ -7,7 +7,7 @@ str name
 str studentNumber
 int grade
 list courses - to corresepond with course names
-list grade - to correspond with grades
+list grades - to correspond with grades
 
 It should have the following methods:
 average()       - determines the mathematical average of all course grades
@@ -23,17 +23,33 @@ constructor     - should require the student name, studentNumber and grade (in t
 """
 
 class student:
+ 
+    name = ""
+    studentID = ""
+    grade = ""
+    courses = []
+    grades = []
 
     # properties should be listed first
 
-    def __init__(): # You will need to create your own input parameters for all methods
-        pass
+    def __init__(self,name,studentID,grade,courses,grades): # You will need to create your own input parameters for all methods
+        print( self.name )
 
     def __del__():
         pass
 
-    def average(self):
+    def getGrades(self, inputList):
+        # the grades are stored in self.grades
+        # receives a list as input
         pass
+
+    def average(self):
+        sum_grades = 0
+        for t in self.grades:
+            sum_grades = sum_grades + t           
+
+        avg = sum_grades / len(grades)
+        return avg
 
 def main():
     # This contains test data that will be used by the autograder.
@@ -41,13 +57,13 @@ def main():
 
     st1 = student("Anita Bath","91334",11)
     st1.getCourses( ["English","Math","PE","Computers","History","Biology","Japanese"] )
-    st1.getGrades( 91, 94, 87, 99, 82, 100, 73)
+    st1.getGrades( [91, 94, 87, 99, 82, 100, 73] )
+
+    print( st1.average() )
 
     st2 = student("Joe Lunchbox","12346", 11)
     st1.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
     st1.getGrades( 71, 98, 93, 95, 68, 81, 71)
-
-
 
 
 main()
