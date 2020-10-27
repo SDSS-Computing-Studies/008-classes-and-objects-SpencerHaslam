@@ -42,8 +42,18 @@ class student:
         self.studentID = studentID
         self.grade = grade
     
-    def showGrade(self,clas):
+    def showGrade(self,posision):
+        prt1 = self.courses[posision]
         
+        prt2 = self.grades[posision]
+
+        prt3 = str(prt1 + " " + str(prt2))
+        return prt3
+        
+        
+        
+
+
         
 
 
@@ -95,7 +105,7 @@ def main():
     st1.getCourses( ["English","Math","PE","Computers","History","Biology","Japanese"] )
     st1.getGrades( [91, 94, 87, 99, 82, 100, 73] )
 
-    print( st1.average() )
+    print( st1.getHonorRoll() )
 
     st2 = student("Joe Lunchbox","12346", 11)
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
