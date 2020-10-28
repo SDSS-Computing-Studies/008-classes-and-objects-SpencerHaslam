@@ -58,8 +58,7 @@ class student:
 
 
 
-    def __del__(self):
-        pass
+
 
     def getGrades(self, inputList):
         # the grades are stored in self.grades
