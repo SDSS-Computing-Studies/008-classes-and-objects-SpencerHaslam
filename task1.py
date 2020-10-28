@@ -88,7 +88,7 @@ class student:
         for t in y:
             sum_grades = sum_grades + t
         
-        h = sum_grades / len( y )
+        y = sum_grades / len( y )
         if y <= 86:
             return True
         else:
