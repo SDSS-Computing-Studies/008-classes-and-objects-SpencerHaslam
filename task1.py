@@ -83,7 +83,7 @@ class student:
             sum_grades = sum_grades + t
         
         y = sum_grades / len( y )
-        if y <= 86:
+        if y >= 86:
             return True
         else:
             return False
