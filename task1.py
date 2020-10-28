@@ -50,14 +50,6 @@ class student:
         prt3 = str(prt1 + " " + str(prt2))
         return prt3
         
-        
-        
-
-
-        
-
-
-
 
 
     def getGrades(self, inputList):
@@ -82,8 +74,10 @@ class student:
         avg = sum_grades / len( self.grades )
         return avg
     def getHonorRoll(self):
-        y = self.grades.sort()
-        y.remove([0],[1])
+        y = list(self.grades)
+        y.sort()
+        y.pop(0)
+        y.pop(0)
         sum_grades = 0
         for t in y:
             sum_grades = sum_grades + t
